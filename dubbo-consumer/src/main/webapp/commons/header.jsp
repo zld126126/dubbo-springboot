@@ -15,16 +15,16 @@ $(function(){
 <div class="headBody" id="headBody">
     <div class="header">
     <div class="mainBox clearfix">
-        <div class="head_l"><span>客服电话：400-XXXX-XXXX</span><em></em><a href="https://weibo.com/678558973" target="_blank" class="weibo"></a></div>
+        <div class="head_l"><span>客服电话：400-XXXX-XXXX</span><em></em><a href="http://weibo.com/678558973" target="_blank" class="weibo"></a></div>
         <div class="head_r"><a href="javascript:void(0)">帮助中心</a><em></em><a href="javascript:void(0)" class="phone_jinxin" style="margin-right:15px;"><i></i>手机客户端</a></div>
     </div>
     </div>
     <div class="headCnt clearfix">
         <div class="logo"><a href="${pageContext.request.contextPath}"><img src="${pageContext.request.contextPath}/images/logo.jpg"></a></div>
         <ul class="main-nav">
-            <li><h2><a id="jinxin" href="${pageContext.request.contextPath}">首页<i></i></a></h2></li><!--current为当前状态-->
+            <li><h2><a id="jinxin" href="${pageContext.request.contextPath}/index">首页<i></i></a></h2></li><!--current为当前状态-->
             <li>
-            	<h2><a id="wytz" href="javascript:void(0)">我要投资<i></i></a></h2>
+            	<h2><a id="wytz" href="${pageContext.request.contextPath}/loan/loan">我要投资<i></i></a></h2>
             	<div class="menu-drop" style="display:none;">
 	               <a href="${pageContext.request.contextPath}/loan/loan?ptype=1">优选类产品</a>
 	               <a href="${pageContext.request.contextPath}/loan/loan?ptype=2">散标类产品</a>
