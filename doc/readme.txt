@@ -11,6 +11,8 @@ dongtech 金融网(正在准备)
 4.访问效果
 http://localhost:8081/getAllUserList
 //返回结果[{"username":"A","password":"123456"},{"username":"B","password":"admin"},{"username":"C","password":"123456"}]
+http://localhost:8081/index
+返回东宝金融网首页
 
 特殊情况:如果发现编译问题
 请优先考虑添加dataservice到lib库中(dubbo-consumer引用dataservice,dubbo-provider引用dataservice)
