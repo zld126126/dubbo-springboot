@@ -13,6 +13,7 @@
         <module>dubbo-dataservice</module>
         <module>dubbo-consumer</module>
         <module>dubbo-provider</module>
+        <module>dubbo-pay</module>
     </modules>
 
     <properties>
