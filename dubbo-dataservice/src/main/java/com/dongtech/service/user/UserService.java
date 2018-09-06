@@ -1,5 +1,6 @@
 package com.dongtech.service.user;
 
+import com.dongtech.model.loan.RechargeRecord;
 import com.dongtech.model.user.User;
 
 /**
@@ -64,4 +65,11 @@ public interface UserService {
 	 * @return
 	 */
 	public int getUserByIdCard(String idCard);
+
+	/**
+	 * 根据充值记录号查询用户id
+	 * @param rechargeNo
+	 * @return
+	 */
+	public int getUserIdByRechargeRecordNo(String rechargeNo);
 }

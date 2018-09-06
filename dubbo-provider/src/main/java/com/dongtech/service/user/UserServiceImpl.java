@@ -2,7 +2,9 @@ package com.dongtech.service.user;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.dongtech.constants.Constants;
+import com.dongtech.mapper.loan.RechargeRecordMapper;
 import com.dongtech.mapper.user.UserMapper;
+import com.dongtech.model.loan.RechargeRecord;
 import com.dongtech.model.user.User;
 import com.dongtech.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,9 @@ public class UserServiceImpl implements UserService {
 
 	@Autowired
 	private UserMapper uUserMapper;
+
+	@Autowired
+	private RechargeRecordMapper rechargeRecordMapper;
 
 	@Resource
 	private RedisTemplate<String, Serializable> redisTemplate;
@@ -118,5 +123,16 @@ public class UserServiceImpl implements UserService {
 	 */
 	public int getUserByIdCard (String idCard) {
 		return uUserMapper.selectUserByIdCard(idCard);
+	}
+
+	@Override
+	public int getUserIdByRechargeRecordNo(String rechargeNo) {
+		//先要查一下用户的id
+		RechargeRecord rechargeRecord = rechargeRecordMapper.selectByRechargeNo(rechargeNo);
+		if(null!=rechargeRecord){
+			return rechargeRecord.getUid();
+		}else{
+			return -1;
+		}
 	}
 }

@@ -62,7 +62,7 @@
           <p>东宝金融网服务号</p>
         </div>
       </div>
-      <div class="copyright">版权所有 ©2017 北京东宝节点教育科技有限公司   京ICP备09027468号   |   <img src="${pageContext.request.contextPath}/images/jinghui.png" alt="京公网安备" />京公网安备11030808027468</div>
+      <div class="copyright">版权所有 ©2017 北京东宝科技有限公司   京ICP备XXXXXX号   |   <img src="${pageContext.request.contextPath}/images/jinghui.png" alt="京公网安备" />京公网安备XXXXXX</div>
       <div class="certification-body">
         <a href="http://webscan.360.cn/index/checkwebsite/url/www.powernode.com" target="_blank" rel="nofollow" class="certification-1"></a>
          <a href="http://www.itrust.org.cn/home/index/wx_certifi/wm/WX2017012201.html?from=singlemessage&isappinstalled=1" target="_blank" rel="nofollow" class="certification-2"></a>

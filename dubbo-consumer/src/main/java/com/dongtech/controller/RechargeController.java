@@ -15,6 +15,8 @@ import com.dongtech.model.loan.RechargeRecord;
 import com.dongtech.model.user.User;
 import com.dongtech.service.loan.OnlyNumberServiceConsumer;
 import com.dongtech.service.loan.RechargeServiceConsumer;
+import com.dongtech.service.user.UserService;
+import com.dongtech.service.user.UserServiceConsumer;
 import com.dongtech.util.DateUtils;
 import com.dongtech.util.HttpClientUtils;
 import org.apache.log4j.LogManager;
@@ -38,6 +40,9 @@ public class RechargeController {
 
 	@Autowired
 	private RechargeServiceConsumer rechargeService;
+
+	@Autowired
+	private UserServiceConsumer userService;
 	
 	@Autowired
 	private OnlyNumberServiceConsumer onlyNumberService;
@@ -150,7 +155,14 @@ public class RechargeController {
 				}
 			}
 			//跳转到充值记录页面
-			return "redirect:../loan/myRecharge";
+			//return "redirect:../loan/myRecharge";
+			User user = (User)request.getSession().getAttribute(Constants.SESSION_USER);
+			if(null==user){
+				Integer uid=userService.getUserIdByRechargeRecordNo(rechargeNo);
+				user = userService.getUserById(uid);
+			}
+			request.getSession().setAttribute(Constants.SESSION_USER, user);
+			return myRecharge(request,model,1);
 		} else {
 			//跳转到一个页面，提示交易异常信息
 			model.addAttribute("trade_msg", "签名验证失败");
@@ -186,6 +198,7 @@ public class RechargeController {
 		if (null == currentPage) {
 			currentPage = 1;//当前页从1开始
 		}
+
 		User user = (User)request.getSession().getAttribute(Constants.SESSION_USER);
 		
 		Map<String, Object> paramMap = new ConcurrentHashMap<String, Object>();

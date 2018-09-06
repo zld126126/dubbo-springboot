@@ -1,6 +1,7 @@
 package com.dongtech.service.user;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.dongtech.model.loan.RechargeRecord;
 import com.dongtech.model.user.User;
 import com.dongtech.service.user.UserService;
 import org.springframework.stereotype.Component;
@@ -83,5 +84,14 @@ public class UserServiceConsumer {
      */
 	public int getUserByIdCard(String idCard){
 		return userService.getUserByIdCard(idCard);
+	}
+
+	/**
+	 * 根据充值记录号查询用户名
+	 * @param rechargeNo
+	 * @return
+	 */
+	public int getUserIdByRechargeRecordNo(String rechargeNo) {
+		return userService.getUserIdByRechargeRecordNo(rechargeNo);
 	}
 }
